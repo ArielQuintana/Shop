@@ -33,6 +33,20 @@ namespace Shop.Web.Data.Entities
 
 
         public User User { get; set; }
+
+        public string ImageFullPath
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(this.ImageUrl))
+                {
+                    return null;
+                }
+
+                return $"http://sipegotest-001-site5.itempurl.com{this.ImageUrl.Substring(1)}";
+            }
+        }
+
     }
 
 }
